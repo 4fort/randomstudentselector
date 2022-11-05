@@ -1,0 +1,335 @@
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@200,500,300,600,400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+* ::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+* ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+* ::-webkit-scrollbar-thumb {
+  background-color: #AD8B73;
+  border-radius: 10px;
+  border: 3px solid rgba(255, 255, 255, 0);
+}
+
+body {
+  font-family: "General Sans", sans-serif;
+  overflow: hidden;
+  background-color: #1b1c1e;
+}
+
+@media (max-width: 576px) {
+  body {
+    overflow-y: scroll;
+  }
+  .container {
+    gap: 0 !important;
+  }
+  .container .appContainer {
+    flex-direction: column;
+    padding-bottom: 0 !important;
+  }
+  .container .appContainer .postCreate {
+    width: -webkit-fill-available !important;
+    width: -moz-available !important;
+    width: fill-available !important;
+    margin: 1.5rem !important;
+  }
+  .container .appContainer .postFeed {
+    width: -webkit-fill-available !important;
+    width: -moz-available !important;
+    width: fill-available !important;
+    margin: 1.5rem !important;
+  }
+}
+.container {
+  color: #FFF8EA;
+  gap: 50px;
+  position: relative;
+}
+.container span {
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+}
+.container .appContainer {
+  border: 0;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  background-color: #FFF8EA;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 100vh;
+}
+.container .appContainer:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.container .appContainer .leftPane {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.container .appContainer .leftPane .studentRandomizer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-end;
+  height: 100%;
+  color: #FFF8EA;
+  margin-top: 3rem;
+  margin-left: 1.5rem;
+  gap: 1.5rem;
+}
+.container .appContainer .leftPane .studentRandomizer .winnerDialogue {
+  border: 0;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  background-color: #AD8B73;
+}
+.container .appContainer .leftPane .studentRandomizer .winnerDialogue:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.container .appContainer .leftPane .studentRandomizer .winnerDialogue h3 {
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 1.5rem;
+  margin-left: 2.5rem;
+}
+.container .appContainer .leftPane .studentRandomizer .winnerDialogue span {
+  font-weight: 700;
+  font-size: 20px;
+  padding: 2rem 0;
+}
+.container .appContainer .leftPane .studentRandomizer button {
+  border: 0;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFBE9;
+  color: #AD8B73;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 2.5rem;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
+  cursor: pointer;
+}
+.container .appContainer .leftPane .studentRandomizer button:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.container .appContainer .leftPane .studentRandomizer button:hover {
+  background-color: #AD8B73;
+  color: #FFFBE9;
+}
+.container .appContainer .leftPane .postCreate {
+  display: flex;
+  height: 10rem;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+.container .appContainer .leftPane .postCreate #form {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
+  gap: 1rem;
+}
+.container .appContainer .leftPane .postCreate #form #errorText {
+  border: 0;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 20px;
+  background-color: #FFF8EA;
+  color: red;
+  font-weight: 500;
+  padding: 1.5rem;
+  transform: translateY(100px);
+  z-index: 999;
+}
+.container .appContainer .leftPane .postCreate #form #errorText:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.container .appContainer .leftPane .postCreate #form input {
+  border: 0;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  font-family: inherit;
+  font-size: 18px;
+  padding: 1.5rem;
+  color: #FFF8EA;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
+  resize: none;
+  background: #CEAB93;
+}
+.container .appContainer .leftPane .postCreate #form input:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.container .appContainer .leftPane .postCreate #form input::-moz-placeholder {
+  color: inherit;
+  font-weight: 500;
+}
+.container .appContainer .leftPane .postCreate #form input:-ms-input-placeholder {
+  color: inherit;
+  font-weight: 500;
+}
+.container .appContainer .leftPane .postCreate #form input::placeholder {
+  color: inherit;
+  font-weight: 500;
+}
+.container .appContainer .leftPane .postCreate #form input:focus {
+  background-color: #AD8B73;
+}
+.container .appContainer .leftPane .postCreate #form button {
+  border: 0;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFBE9;
+  color: #AD8B73;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 2.5rem;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
+  cursor: pointer;
+}
+.container .appContainer .leftPane .postCreate #form button:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.container .appContainer .leftPane .postCreate #form button:hover {
+  background-color: #AD8B73;
+  color: #FFFBE9;
+}
+.container .appContainer .leftPane .postCreate #form button span {
+  width: 60px;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+.container .appContainer .leftPane .postCreate #form button span i {
+  font-size: 16px;
+  margin-left: -25px;
+  width: auto;
+  transition: margin 0.5s;
+}
+.container .appContainer .leftPane .postCreate #form button:hover > span i {
+  margin-left: 0;
+}
+.container .appContainer .studentFeed {
+  border: 0;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: 1.5rem;
+  margin-right: 1.5rem;
+  width: 50%;
+  height: 32rem;
+  background-color: #FFFBE9;
+  color: #AD8B73;
+  overflow-y: scroll;
+}
+.container .appContainer .studentFeed:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.container .appContainer .studentFeed h3 {
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-left: 2.5rem;
+}
+.container .appContainer .studentFeed #studentsListContainer div {
+  border: 0;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  background-color: #FFF8EA;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
+  padding: 2rem;
+  margin: 1rem 2rem;
+  transition: all 0.3s;
+}
+.container .appContainer .studentFeed #studentsListContainer div:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.container .appContainer .studentFeed #studentsListContainer div pre {
+  width: 85%;
+  font-family: inherit;
+  font-weight: 500;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+.container .appContainer .studentFeed #studentsListContainer div .options {
+  display: flex;
+  gap: 25px;
+  padding: 0;
+}
+.container .appContainer .studentFeed #studentsListContainer div .options i {
+  cursor: pointer;
+}
+.container .appContainer .studentFeed #studentsListContainer .editActive {
+  background-color: #CEAB93;
+  color: #FFF8EA;
+}
+.container .appContainer .studentFeed #clearAll {
+  border: 0;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(200px);
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: #AD8B73;
+  color: #FFF8EA;
+  width: 10px;
+  height: 10px;
+  padding: 1.5rem;
+  border-radius: 25px;
+  right: 60px;
+  bottom: 50px;
+  cursor: pointer;
+}
+.container .appContainer .studentFeed #clearAll:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.container .appContainer .studentFeed #clearAll:hover {
+  background-color: #CEAB93;
+}/*# sourceMappingURL=style.css.map */

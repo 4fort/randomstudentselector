@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Student Selector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <span>
+            <h1>RANDOM STUDENT SELECTOR</h1>
+            <h6>by DEXTER FORT SILVA</h6>
+        </span>
+
+        <div class="appContainer">
+            <div class="leftPane">
+                <div class="postCreate">
+                    <form id="form">
+                        <input name="post" id="input" placeholder="Input student name..."></input>
+                        <button type="submit" id="button">
+                            <span>
+                                <i class="fas fa-plus"></i>
+                                <span>Add</span>
+                            </span>
+                        </button>
+                        <span id="errorText"></span>
+                    </form>
+                </div>
+    
+                <div class="studentRandomizer">
+                    <div class="winnerDialogue">
+                        <h3>Lucky Student</h3>
+                        <span></span>
+                    </div>
+                    <button onclick="randomizer_Animation()">Randomize</button>
+                </div>
+            </div>
+
+            <div class="studentFeed">
+                <h3>List of Students</h3>
+                <div id="studentsListContainer"></div>
+                <div id="clearAll" onClick="clearAll()">
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

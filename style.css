@@ -1,4 +1,13 @@
 @import url("https://api.fontshare.com/v2/css?f[]=general-sans@200,500,300,600,400,700&display=swap");
+@media (max-width: 768px) {
+  .leftPane,
+  .studentFeed {
+    width: 100% !important;
+  }
+  .leftPane .studentRandomizer {
+    margin: 1.5rem !important;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +20,7 @@
   background: rgba(255, 255, 255, 0);
 }
 * ::-webkit-scrollbar-thumb {
-  background-color: #AD8B73;
+  background-color: #ad8b73;
   border-radius: 10px;
   border: 3px solid rgba(255, 255, 255, 0);
 }
@@ -47,7 +56,7 @@ body {
   }
 }
 .container {
-  color: #FFF8EA;
+  color: #fff8ea;
   gap: 50px;
   position: relative;
 }
@@ -62,7 +71,7 @@ body {
   outline: none;
   transition: all 0.3s;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  background-color: #FFF8EA;
+  background-color: #fff8ea;
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
@@ -82,7 +91,7 @@ body {
   position: relative;
   justify-content: flex-end;
   height: 100%;
-  color: #FFF8EA;
+  color: #fff8ea;
   margin-top: 3rem;
   margin-left: 1.5rem;
   gap: 1.5rem;
@@ -93,7 +102,7 @@ body {
   outline: none;
   transition: all 0.3s;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  background-color: #AD8B73;
+  background-color: #ad8b73;
 }
 .container .appContainer .leftPane .studentRandomizer .winnerDialogue:hover {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
@@ -118,8 +127,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFFBE9;
-  color: #AD8B73;
+  background-color: #fffbe9;
+  color: #ad8b73;
   font-weight: 500;
   font-size: 18px;
   padding: 2.5rem;
@@ -132,8 +141,8 @@ body {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 .container .appContainer .leftPane .studentRandomizer button:hover {
-  background-color: #AD8B73;
-  color: #FFFBE9;
+  background-color: #ad8b73;
+  color: #fffbe9;
 }
 .container .appContainer .leftPane .postCreate {
   display: flex;
@@ -158,11 +167,11 @@ body {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   position: fixed;
   bottom: 20px;
-  background-color: #FFF8EA;
+  background-color: #fff8ea;
   color: red;
   font-weight: 500;
   padding: 1.5rem;
-  transform: translateY(100px);
+  transform: translateY(200px);
   z-index: 999;
 }
 .container .appContainer .leftPane .postCreate #form #errorText:hover {
@@ -177,12 +186,12 @@ body {
   font-family: inherit;
   font-size: 18px;
   padding: 1.5rem;
-  color: #FFF8EA;
+  color: #fff8ea;
   width: -webkit-fill-available;
   width: -moz-available;
   width: fill-available;
   resize: none;
-  background: #CEAB93;
+  background: #ceab93;
 }
 .container .appContainer .leftPane .postCreate #form input:hover {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
@@ -191,16 +200,12 @@ body {
   color: inherit;
   font-weight: 500;
 }
-.container .appContainer .leftPane .postCreate #form input:-ms-input-placeholder {
-  color: inherit;
-  font-weight: 500;
-}
 .container .appContainer .leftPane .postCreate #form input::placeholder {
   color: inherit;
   font-weight: 500;
 }
 .container .appContainer .leftPane .postCreate #form input:focus {
-  background-color: #AD8B73;
+  background-color: #ad8b73;
 }
 .container .appContainer .leftPane .postCreate #form button {
   border: 0;
@@ -211,8 +216,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFFBE9;
-  color: #AD8B73;
+  background-color: #fffbe9;
+  color: #ad8b73;
   font-weight: 500;
   font-size: 18px;
   padding: 2.5rem;
@@ -225,8 +230,8 @@ body {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 .container .appContainer .leftPane .postCreate #form button:hover {
-  background-color: #AD8B73;
-  color: #FFFBE9;
+  background-color: #ad8b73;
+  color: #fffbe9;
 }
 .container .appContainer .leftPane .postCreate #form button span {
   width: 60px;
@@ -255,8 +260,8 @@ body {
   margin-right: 1.5rem;
   width: 50%;
   height: 32rem;
-  background-color: #FFFBE9;
-  color: #AD8B73;
+  background-color: #fffbe9;
+  color: #ad8b73;
   overflow-y: scroll;
 }
 .container .appContainer .studentFeed:hover {
@@ -273,7 +278,7 @@ body {
   outline: none;
   transition: all 0.3s;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  background-color: #FFF8EA;
+  background-color: #fff8ea;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -303,8 +308,8 @@ body {
   cursor: pointer;
 }
 .container .appContainer .studentFeed #studentsListContainer .editActive {
-  background-color: #CEAB93;
-  color: #FFF8EA;
+  background-color: #ceab93;
+  color: #fff8ea;
 }
 .container .appContainer .studentFeed #clearAll {
   border: 0;
@@ -317,8 +322,8 @@ body {
   position: fixed;
   justify-content: center;
   align-items: center;
-  background-color: #AD8B73;
-  color: #FFF8EA;
+  background-color: #ad8b73;
+  color: #fff8ea;
   width: 10px;
   height: 10px;
   padding: 1.5rem;
@@ -331,5 +336,5 @@ body {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 .container .appContainer .studentFeed #clearAll:hover {
-  background-color: #CEAB93;
+  background-color: #ceab93;
 }/*# sourceMappingURL=style.css.map */

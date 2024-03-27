@@ -1,313 +1,324 @@
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@200,500,300,600,400,700&display=swap');
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@200,500,300,600,400,700&display=swap");
 
-$primaryColor: #FFF8EA;
-$secondaryColor: #E3CAA5;
-$thirdColor: #CEAB93;
-$fourthColor: #AD8B73;
+$primaryColor: #fff8ea;
+$secondaryColor: #e3caa5;
+$thirdColor: #ceab93;
+$fourthColor: #ad8b73;
 $fifthColor: #1b1c1e;
-$sixthColor: #FFFBE9;
+$sixthColor: #fffbe9;
 
 $gapping: 1.5rem;
 $fontWeight: 500;
 $fontSize: 18px;
 
+@media (max-width: 768px) {
+  .leftPane,
+  .studentFeed {
+    width: 100% !important;
+  }
 
-*{
-    margin: 0;
-    padding: 0;
-    ::-webkit-scrollbar {
-        width: 10px;
-        display: none;
+  .leftPane {
+    .studentRandomizer {
+      margin: $gapping !important;
     }
+  }
+}
 
-    ::-webkit-scrollbar-track {
-        background: #ffffff00;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  ::-webkit-scrollbar {
+    width: 10px;
+    display: none;
+  }
 
-    ::-webkit-scrollbar-thumb {
-        background-color: $fourthColor;
-        border-radius: 10px;
-        border: 3px solid #ffffff00;
-    }
+  ::-webkit-scrollbar-track {
+    background: #ffffff00;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $fourthColor;
+    border-radius: 10px;
+    border: 3px solid #ffffff00;
+  }
 }
 
 body {
-    font-family: 'General Sans', sans-serif;
-    overflow: hidden;
-    background-color: $fifthColor;
+  font-family: "General Sans", sans-serif;
+  overflow: hidden;
+  background-color: $fifthColor;
 }
 
 @media (max-width: 576px) {
-    body{
-        overflow-y: scroll;
+  body {
+    overflow-y: scroll;
+  }
+
+  .container {
+    gap: 0 !important;
+    .appContainer {
+      flex-direction: column;
+      padding-bottom: 0 !important;
+
+      @mixin mobileDisplay {
+        width: fill-available !important;
+        margin: 1.5rem !important;
+      }
+
+      .postCreate {
+        @include mobileDisplay();
+      }
+      .postFeed {
+        @include mobileDisplay();
+      }
     }
-
-    .container{
-        gap: 0!important;
-        .appContainer {
-            flex-direction: column;
-            padding-bottom: 0!important;
-
-            @mixin mobileDisplay {
-                width: fill-available!important;
-                margin: 1.5rem!important;
-            }
-
-            .postCreate {
-                @include mobileDisplay();
-            }
-            .postFeed {
-                @include mobileDisplay();
-            }
-        }
-    }
+  }
 }
 
 .container {
-    color: $primaryColor;
-    gap: 50px;
-    position: relative;
-    span {
-        display: flex;
-        justify-content: center;
-        padding: 5rem;
+  color: $primaryColor;
+  gap: 50px;
+  position: relative;
+  span {
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+  }
+
+  @mixin materialYou {
+    border: 0;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s;
+
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    &:hover {
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     }
+  }
 
-    @mixin materialYou{
-        border: 0;
-        border-radius: 30px;
-        outline: none;
-        transition: all .3s;
+  .appContainer {
+    @include materialYou();
 
-        box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
-        &:hover {
-            box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
-        }
-    }
+    background-color: $primaryColor;
+    display: flex;
+    justify-content: space-between;
+    gap: $gapping;
+    padding-bottom: 100vh;
 
-    .appContainer {
-        @include materialYou();
+    .leftPane {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
 
-        background-color: $primaryColor;
+      .studentRandomizer {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        position: relative;
+        justify-content: flex-end;
+        height: 100%;
+        color: $primaryColor;
+        margin-top: $gapping + 1.5;
+        margin-left: $gapping;
         gap: $gapping;
-        padding-bottom: 100vh;
 
-        .leftPane {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
+        .winnerDialogue {
+          @include materialYou();
 
-            .studentRandomizer {
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                justify-content: flex-end;
-                height: 100%;
-                color: $primaryColor;
-                margin-top: $gapping + 1.5;
-                margin-left: $gapping;
-                gap: $gapping;
-                
-                .winnerDialogue {
-                    @include materialYou();
-
-                    background-color: $fourthColor;
-                    h3 {
-                        font-weight: $fontWeight;
-                        font-size: 14px;
-                        margin-top: 1.5rem;
-                        margin-left: 2.5rem;
-                    }
-                    span {
-                        font-weight: 700;
-                        font-size: 20px;
-                        padding: 2rem 0;
-                    }
-                }
-
-                button {
-                    @include materialYou();
-    
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    // position: absolute;
-                    // bottom: 0;
-                    background-color: $sixthColor;
-                    color: $fourthColor;
-                    font-weight: $fontWeight;
-                    font-size: $fontSize;
-                    padding: 2.5rem;
-                    width: fill-available;
-                    cursor: pointer;
-
-                    &:hover {
-                        background-color: $fourthColor;
-                        color: $sixthColor;
-                    }
-                }
-            }
-
-            .postCreate {
-                display: flex;
-                height: 10rem;
-                margin-top: $gapping;
-                margin-left: $gapping;
-                #form {
-                    display: flex;
-                    flex-direction: column;
-                    flex-flow: wrap;
-                    width: fill-available;
-                    gap: 1rem;
-                    #errorText {
-                        @include materialYou();
-                        position: fixed;
-                        bottom: 20px;
-                        background-color: $primaryColor;
-                        color: red;
-                        font-weight: $fontWeight;
-                        padding: 1.5rem;
-                        transform: translateY(100px);
-                        z-index: 999;
-                    }
-                    input {
-                        @include materialYou();
-    
-                        font-family: inherit;
-                        font-size: $fontSize;
-                        padding: 1.5rem;
-                        color: $primaryColor;
-                        width: fill-available;
-                        // height: 22rem;
-                        resize: none;
-                        background: $thirdColor;
-                        
-                        &::placeholder {
-                            color: inherit;
-                            font-weight: $fontWeight;
-                        }
-    
-                        &:focus {
-                            background-color: $fourthColor;
-                        }
-                    }
-                    button {
-                        @include materialYou();
-    
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        background-color: $sixthColor;
-                        color: $fourthColor;
-                        font-weight: $fontWeight;
-                        font-size: $fontSize;
-                        padding: 2.5rem;
-                        width: fill-available;
-                        cursor: pointer;
-    
-                        &:hover {
-                            background-color: $fourthColor;
-                            color: $sixthColor;
-                        }
-                        span {
-                            width: 60px;
-                            padding: 0;
-                            display: flex;
-                            overflow: hidden;
-                            justify-content: center;
-                            i {
-                                font-size: 16px;
-                                margin-left: -25px;
-                                width: auto;
-                                transition: margin .5s;
-                            }
-                            span {
-                            }
-                        }
-                        &:hover > span {
-                            i {
-                                margin-left: 0;
-                            }
-                        }
-                    }
-                }
-            }
+          background-color: $fourthColor;
+          h3 {
+            font-weight: $fontWeight;
+            font-size: 14px;
+            margin-top: 1.5rem;
+            margin-left: 2.5rem;
+          }
+          span {
+            font-weight: 700;
+            font-size: 20px;
+            padding: 2rem 0;
+          }
         }
-        .studentFeed {
+
+        button {
+          @include materialYou();
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // position: absolute;
+          // bottom: 0;
+          background-color: $sixthColor;
+          color: $fourthColor;
+          font-weight: $fontWeight;
+          font-size: $fontSize;
+          padding: 2.5rem;
+          width: fill-available;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $fourthColor;
+            color: $sixthColor;
+          }
+        }
+      }
+
+      .postCreate {
+        display: flex;
+        height: 10rem;
+        margin-top: $gapping;
+        margin-left: $gapping;
+        #form {
+          display: flex;
+          flex-direction: column;
+          flex-flow: wrap;
+          width: fill-available;
+          gap: 1rem;
+          #errorText {
             @include materialYou();
-            
-            position: relative;
-            margin-top: $gapping;
-            margin-right: $gapping;
-            width: 50%;
-            height: 32rem;
-            // margin-bottom: 100px;
+            position: fixed;
+            bottom: 20px;
+            background-color: $primaryColor;
+            color: red;
+            font-weight: $fontWeight;
+            padding: 1.5rem;
+            transform: translateY(200px);
+            z-index: 999;
+          }
+          input {
+            @include materialYou();
+
+            font-family: inherit;
+            font-size: $fontSize;
+            padding: 1.5rem;
+            color: $primaryColor;
+            width: fill-available;
+            // height: 22rem;
+            resize: none;
+            background: $thirdColor;
+
+            &::placeholder {
+              color: inherit;
+              font-weight: $fontWeight;
+            }
+
+            &:focus {
+              background-color: $fourthColor;
+            }
+          }
+          button {
+            @include materialYou();
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: $sixthColor;
             color: $fourthColor;
-            overflow-y: scroll;
-            h3 {
-                font-weight: $fontWeight;
-                margin-top: 1.5rem;
-                margin-left: 2.5rem;
-            }
-            #studentsListContainer {
-                div{
-                    @include materialYou();
+            font-weight: $fontWeight;
+            font-size: $fontSize;
+            padding: 2.5rem;
+            width: fill-available;
+            cursor: pointer;
 
-                    background-color: $primaryColor;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    width: fill-available;
-                    padding: 2rem;
-                    margin: 1rem 2rem;
-                    transition: all .3s;
-                    pre {
-                        width: 85%;
-                        font-family: inherit;
-                        font-weight: $fontWeight;
-                        overflow-wrap: break-word;
-                        white-space: pre-wrap;
-                    }
-                    .options {
-                        display: flex;
-                        gap: 25px;
-                        padding: 0;
-                        i {
-                            cursor: pointer;
-                        }
-                    }
-                }
-                .editActive {
-                    background-color: $thirdColor;
-                    color: $primaryColor;
-                }
+            &:hover {
+              background-color: $fourthColor;
+              color: $sixthColor;
             }
-            #clearAll {
-                @include materialYou();
-
-                transform: translateY(200px);
-                display: flex;
-                position: fixed;
-                justify-content: center;
-                align-items: center;
-                background-color: $fourthColor;
-                color: $primaryColor;
-                width: 10px;
-                height: 10px;
-                padding: 1.5rem;
-                border-radius: 25px;
-                right: 60px;
-                bottom: 50px;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: $thirdColor;
-                }
+            span {
+              width: 60px;
+              padding: 0;
+              display: flex;
+              overflow: hidden;
+              justify-content: center;
+              i {
+                font-size: 16px;
+                margin-left: -25px;
+                width: auto;
+                transition: margin 0.5s;
+              }
+              span {
+              }
             }
+            &:hover > span {
+              i {
+                margin-left: 0;
+              }
+            }
+          }
         }
+      }
     }
-}
+    .studentFeed {
+      @include materialYou();
 
+      position: relative;
+      margin-top: $gapping;
+      margin-right: $gapping;
+      width: 50%;
+      height: 32rem;
+      // margin-bottom: 100px;
+      background-color: $sixthColor;
+      color: $fourthColor;
+      overflow-y: scroll;
+      h3 {
+        font-weight: $fontWeight;
+        margin-top: 1.5rem;
+        margin-left: 2.5rem;
+      }
+      #studentsListContainer {
+        div {
+          @include materialYou();
+
+          background-color: $primaryColor;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: fill-available;
+          padding: 2rem;
+          margin: 1rem 2rem;
+          transition: all 0.3s;
+          pre {
+            width: 85%;
+            font-family: inherit;
+            font-weight: $fontWeight;
+            overflow-wrap: break-word;
+            white-space: pre-wrap;
+          }
+          .options {
+            display: flex;
+            gap: 25px;
+            padding: 0;
+            i {
+              cursor: pointer;
+            }
+          }
+        }
+        .editActive {
+          background-color: $thirdColor;
+          color: $primaryColor;
+        }
+      }
+      #clearAll {
+        @include materialYou();
+
+        transform: translateY(200px);
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        background-color: $fourthColor;
+        color: $primaryColor;
+        width: 10px;
+        height: 10px;
+        padding: 1.5rem;
+        border-radius: 25px;
+        right: 60px;
+        bottom: 50px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $thirdColor;
+        }
+      }
+    }
+  }
+}
